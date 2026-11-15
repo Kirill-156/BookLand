@@ -10,7 +10,8 @@ export function BookPage() {
     const { data: book, isLoading, isError, error } = useQuery({
         queryKey: ["book", id],
         queryFn: () => getBookById(Number(id)),
-        retry: false
+        retry: false,
+        staleTime: 1000 * 60 * 5,
     })
 
     if (isLoading) {

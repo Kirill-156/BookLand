@@ -1,8 +1,8 @@
 import { BasketCard } from "../components/BasketCard"
-import { getBooks } from "../data/books"
+import { useBooks } from "../lib/BookContext"
 
 export function BasketPage() {
-    const books = getBooks()
+    const { books } = useBooks()
 
     return (
         <div className="bg-amber-100/40 p-10 flex flex-col gap-8">
